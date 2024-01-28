@@ -194,21 +194,21 @@ editor.commands.addCommand({
     
     function changeThemeRainy() {
     editor.setTheme("ace-rainy");
-    editor.container.style.background = 'url("rainy.jpg")';
+    editor.container.style.background = 'url("images/rainy.jpg")';
     editor.container.style.backgroundSize = 'cover';
     editor.container.classList.add('ace-rainy');
 }
 
 function changeThemeBatman() {
     editor.setTheme("ace-batman");
-    editor.container.style.background = 'url("batman.jpg")';
+    editor.container.style.background = 'url("images/batman.jpg")';
     editor.container.style.backgroundSize = 'cover';
     editor.container.classList.add('ace-batman');
 }
 
 function changeThemeAurora() {
     editor.setTheme("ace-aurora");
-    editor.container.style.background = 'url("aurora.jpg")';
+    editor.container.style.background = 'url("images/aurora.jpg")';
     editor.container.style.backgroundSize = 'cover';
     editor.container.classList.add('ace-aurora');
 }
