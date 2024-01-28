@@ -44,7 +44,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
           <li class="nav-item">
-          <label class="nav-link" for="fileInput">Upload File</label>
+          <label class="nav-link" for="fileInput">Upload</label>
           <input type="file" id="fileInput" class="d-none" accept=".html" onchange="loadFile()">
         </li>
         <li class="nav-item">
@@ -55,10 +55,10 @@
         </li>
           
          <li class="nav-item">
-          <a class="nav-link" href="#" onclick="toggleWordWrap()">Word Wrap</a>
+          <a class="nav-link" href="#" onclick="toggleWordWrap()">Wrap</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="toggleReadOnly()">Toggle Read-Only</a>
+          <a class="nav-link" href="#" onclick="toggleReadOnly()">Read-Only</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" onclick="executeCode()">Execute</a>
@@ -66,7 +66,7 @@
         
         <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="editorOptionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Editor Options
+        Edit
     </a>
     <div class="dropdown-menu" aria-labelledby="editorOptionsDropdown">
         <a class="dropdown-item" href="#" onclick="selectAllAndClose()">Select All</a>
@@ -80,7 +80,7 @@
         <!-- Theme Selector Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Visual Styles
+            Themes
           </a>
           <div class="dropdown-menu" aria-labelledby="themeDropdown">
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/ambiance')">Ambiance</a>
