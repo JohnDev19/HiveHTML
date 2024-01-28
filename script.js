@@ -17,14 +17,14 @@
       var languageSelector = document.getElementById('languageSelector');
       var selectedLanguage = languageSelector.value;
       editor.session.setMode(`ace/mode/${selectedLanguage}`);
-      editor.setValue(`// Upload or enter your code here...`, 1);
+      editor.setValue(`Upload or enter your code here...`, 1);
     }
 
     function changeLanguage() {
       var languageSelector = document.getElementById('languageSelector');
       var selectedLanguage = languageSelector.value;
       editor.session.setMode(`ace/mode/${selectedLanguage}`);
-      editor.setValue(`// Upload or enter your code here...`, 1);
+      editor.setValue(`Upload or enter your code here...`, 1);
     }
 
     function changeTheme(theme) {
