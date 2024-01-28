@@ -56,35 +56,35 @@ function closeOutputModal() {
 }
 
 function loadFile() {
-      var fileInput = document.getElementById('fileInput');
-      var file = fileInput.files[0];
+  var fileInput = document.getElementById('fileInput');
+  var file = fileInput.files[0];
 
-      if (file) {
-        var reader = new FileReader();
-        reader.onload = function (e) {
-          var content = e.target.result;
-          var mode = getModeFromFileName(file.name);
-          editor.session.setMode(`ace/mode/${mode}`);
-          editor.setValue(content, 1);
+  if (file) {
+    var reader = new FileReader();
+    reader.onload = function (e) {
+      var content = e.target.result;
+      var mode = getModeFromFileName(file.name);
+      editor.session.setMode(`ace/mode/${mode}`);
+      editor.setValue(content, 1);
 
-          var languageSelector = document.getElementById('languageSelector');
-          languageSelector.value = mode;
-        };
-        reader.readAsText(file);
-      } else {
-        setDefaultMode();
-      }
-    }
+      var languageSelector = document.getElementById('languageSelector');
+      languageSelector.value = mode;
+    };
+    reader.readAsText(file);
+  } else {
+    setDefaultMode();
+  }
+}
 
-    function getModeFromFileName(fileName) {
-      var extension = fileName.split('.').pop().toLowerCase();
-      switch (extension) {
-        case 'html':
-          return 'html';
-        default:
-          return 'text';
-      }
-    }
+function getModeFromFileName(fileName) {
+  var extension = fileName.split('.').pop().toLowerCase();
+  switch (extension) {
+    case 'html':
+      return 'html';
+    default:
+      return 'text';
+  }
+}
     
     // Autocomplete functionality
 editor.commands.addCommand({
