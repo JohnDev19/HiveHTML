@@ -44,21 +44,21 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
           <li class="nav-item">
-          <label class="nav-link" for="fileInput">Upload</label>
+          <label class="nav-link" for="fileInput">Upload File</label>
           <input type="file" id="fileInput" class="d-none" accept=".html" onchange="loadFile()">
         </li>
         <li class="nav-item">
           <select id="languageSelector" class="custom-select" onchange="changeLanguage()">
-	    <option value="text">Plain Text</option>
-	    <option value="html">HTML</option>
+            <option value="html">HTML</option>
+            <option value="text">Plain Text</option>
           </select>
         </li>
           
          <li class="nav-item">
-          <a class="nav-link" href="#" onclick="toggleWordWrap()">Wrap</a>
+          <a class="nav-link" href="#" onclick="toggleWordWrap()">Word Wrap</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="toggleReadOnly()">Read-Only</a>
+          <a class="nav-link" href="#" onclick="toggleReadOnly()">Toggle Read-Only</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" onclick="executeCode()">Execute</a>
@@ -66,7 +66,7 @@
         
         <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="editorOptionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Editor
+        Editor Options
     </a>
     <div class="dropdown-menu" aria-labelledby="editorOptionsDropdown">
         <a class="dropdown-item" href="#" onclick="selectAllAndClose()">Select All</a>
@@ -75,11 +75,12 @@
         <a class="dropdown-item" href="#" onclick="copyAndClose()">Copy</a>
         <a class="dropdown-item" href="#" onclick="deleteAllAndClose()">Delete All</a>
     </div>
-</li>     
+</li>
+        
         <!-- Theme Selector Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Theme
+            Visual Styles
           </a>
           <div class="dropdown-menu" aria-labelledby="themeDropdown">
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/ambiance')">Ambiance</a>
@@ -109,10 +110,14 @@
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/twilight')">Twilight</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/vibrant_ink')">Vibrant Ink</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/xcode')">Xcode</a>
+    <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#" onclick="changeThemeRainy('ace-rainy')">Rainy Day</a>
+        <a class="dropdown-item" href="#" onclick="changeThemeBatman('ace-batman')">Batman</a>
+        <a class="dropdown-item" href="#" onclick="changeThemeAurora('ace-aurora')">Aurora</a>
           </div>
         </li>
       </ul>
-
+      
       <!--
       <div class="disclaimer">
     <p><strong>Disclaimer:</strong> HiveHTML uses the Ace Editor for code editing. Ace Editor is a product of Ajax.org. HiveHTML is created by John Ré Poras.</p>
