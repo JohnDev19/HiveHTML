@@ -145,17 +145,17 @@ body {
     }
     
     .ace-rainy {
-    background: url('rainy.jpg') center/cover no-repeat !important;
+    background: url('images/rainy.jpg') center/cover no-repeat !important;
     backdrop-filter: blur(3px) brightness(0.7);
 }
 
 .ace-batman {
-    background: url('batman.jpg') center/cover no-repeat !important;
+    background: url('images/batman.jpg') center/cover no-repeat !important;
     backdrop-filter: blur(3px) brightness(0.7);
 }
 
 .ace-sunset {
-    background: url('sunset.jpg') center/cover no-repeat !important;
+    background: url('images/aurora.jpg') center/cover no-repeat !important;
     backdrop-filter: blur(3px) brightness(0.7);
 }
 
