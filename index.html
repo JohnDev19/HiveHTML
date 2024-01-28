@@ -44,21 +44,21 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
           <li class="nav-item">
-          <label class="nav-link" for="fileInput">Upload File</label>
+          <label class="nav-link" for="fileInput">Upload</label>
           <input type="file" id="fileInput" class="d-none" accept=".html" onchange="loadFile()">
         </li>
         <li class="nav-item">
           <select id="languageSelector" class="custom-select" onchange="changeLanguage()">
-            <option value="text">Plain Text</option>
             <option value="html">HTML</option>
+	    <option value="text">Plain Text</option>
           </select>
         </li>
           
          <li class="nav-item">
-          <a class="nav-link" href="#" onclick="toggleWordWrap()">Word Wrap</a>
+          <a class="nav-link" href="#" onclick="toggleWordWrap()">Wrap</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="toggleReadOnly()">Toggle Read-Only</a>
+          <a class="nav-link" href="#" onclick="toggleReadOnly()">Read-Only</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" onclick="executeCode()">Execute</a>
@@ -66,7 +66,7 @@
         
         <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="editorOptionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Editor Options
+        Editor
     </a>
     <div class="dropdown-menu" aria-labelledby="editorOptionsDropdown">
         <a class="dropdown-item" href="#" onclick="selectAllAndClose()">Select All</a>
@@ -75,12 +75,11 @@
         <a class="dropdown-item" href="#" onclick="copyAndClose()">Copy</a>
         <a class="dropdown-item" href="#" onclick="deleteAllAndClose()">Delete All</a>
     </div>
-</li>
-        
+</li>     
         <!-- Theme Selector Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Visual Styles
+            Theme
           </a>
           <div class="dropdown-menu" aria-labelledby="themeDropdown">
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/ambiance')">Ambiance</a>
@@ -104,9 +103,9 @@
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/terminal')">Terminal</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/textmate')">Textmate</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night')">Tomorrow Night</a>
-    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_blue')">Tomorrow Night Blue</a>
-    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_bright')">Tomorrow Night Bright</a>
-    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_eighties')">Tomorrow Night Eighties</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_blue')">Tomorrow Blue</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_bright')">Tomorrow Bright</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_eighties')">Tomorrow Eighties</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/twilight')">Twilight</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/vibrant_ink')">Vibrant Ink</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/xcode')">Xcode</a>
