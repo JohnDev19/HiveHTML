@@ -156,6 +156,38 @@ editor.commands.addCommand({
       enableLiveAutocompletion: true,
     });
     
-    
+    function selectAllAndClose() {
+        selectAll();
+        closeNavbar();
+    }
+
+    function undoAndClose() {
+        undo();
+        closeNavbar();
+    }
+
+    function redoAndClose() {
+        redo();
+        closeNavbar();
+    }
+
+    function copyAndClose() {
+        copyText();
+        closeNavbar();
+    }
+
+    function runAndClose() {
+        run();
+        closeNavbar();
+    }
+
+    function deleteAllAndClose() {
+        deleteAll();
+        closeNavbar();
+    }
+
+    function closeNavbar() {
+        $(".navbar-collapse").collapse("hide");
+    }
   
   
