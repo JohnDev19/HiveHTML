@@ -153,13 +153,26 @@ body {
   }
   
   .disclaimer {
-      background-color: #f8d7da;
-      color: #721c24;
-      padding: 10px;
-      margin-bottom: 20px;
-      border: 1px solid #f5c6cb;
-      border-radius: 4px;
-    }
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .disclaimer p {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .disclaimer:hover p {
+    display: block;
+  }
+}
   
   .social-icons {
       list-style: none;
