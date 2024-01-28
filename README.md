@@ -2,6 +2,17 @@
 
 HiveHTML is a collaborative and efficient code editor for HTML enthusiasts. Join the coding hive and experience code editing with powerful features.
 
+# Screenshots
+
+- [Live Demo](https://johndev19.github.io/HiveHTML/)
+
+![Demo](IMG_20240128_121706.jpg)
+![Demo](IMG_20240128_121647.jpg)
+![Demo](IMG_20240128_121537.jpg)
+![Demo](IMG_20240128_121726.jpg)
+![Demo](IMG_20240128_121631.jpg)
+![Demo](IMG_20240128_121614.jpg)
+
 ## Disclaimer
 
 HiveHTML uses the Ace Editor for code editing, a product of Ajax.org. HiveHTML is created by **John Ré Poras**.
