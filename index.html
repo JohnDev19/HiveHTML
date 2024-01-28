@@ -1,0 +1,161 @@
+<!--  Disclaimer: HiveHTML uses the Ace Editor for code editing. Ace Editor is a product of Ajax.org. HiveHTML is created by JOHN RÉ PORAS.
+
+ Copyright (c) 2024 JOHN RÉ PORAS
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Join the coding hive with HiveHTML – a collaborative and efficient code editor for HTML enthusiasts.">
+  <meta name="author" content="John Ré Poras">
+  <title>HiveHTML - Code Editor</title>
+  <link rel="shortcut icon" href="code.png" type="image/x-icon">
+
+    <link rel="icon" href="code.png" type="image/x-icon">
+    
+    <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <!-- Ace Editor -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.js"></script>
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+  <!-- Navigation Menu -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">HiveHTML</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+          <li class="nav-item">
+          <label class="nav-link" for="fileInput">Upload File</label>
+          <input type="file" id="fileInput" class="d-none" accept=".html" onchange="loadFile()">
+        </li>
+        <li class="nav-item">
+          <select id="languageSelector" class="custom-select" onchange="changeLanguage()">
+            <option value="text">Plain Text</option>
+            <option value="html">HTML</option>
+          </select>
+        </li>
+          
+         <li class="nav-item">
+          <a class="nav-link" href="#" onclick="toggleWordWrap()">Word Wrap</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="toggleReadOnly()">Toggle Read-Only</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="executeCode()">Execute</a>
+        </li>
+        
+        <!-- Theme Selector Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Visual Styles
+          </a>
+          <div class="dropdown-menu" aria-labelledby="themeDropdown">
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/ambiance')">Ambiance</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/chaos')">Chaos</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/clouds')">Clouds</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/cobalt')">Cobalt</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/crimson_editor')">Crimson Editor</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/dracula')">Dracula</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/eclipse')">Eclipse</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/github')">GitHub</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/gob')">Green on Black</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/gruvbox')">Gruvbox</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/idle_fingers')">Idle Fingers</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/kr_theme')">KR Theme</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/merbivore')">Merbivore</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/mono_industrial')">Mono Industrial</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/pastel_on_dark')">Pastel on Dark</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/solarized_dark')">Solarized Dark</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/solarized_light')">Solarized Light</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/sqlserver')">SQL Server</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/terminal')">Terminal</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/textmate')">Textmate</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night')">Tomorrow Night</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_blue')">Tomorrow Night Blue</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_bright')">Tomorrow Night Bright</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/tomorrow_night_eighties')">Tomorrow Night Eighties</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/twilight')">Twilight</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/vibrant_ink')">Vibrant Ink</a>
+    <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/xcode')">Xcode</a>
+          </div>
+        </li>
+      </ul>
+      
+      <div class="disclaimer">
+    <p><strong>Disclaimer:</strong> HiveHTML uses the Ace Editor for code editing. Ace Editor is a product of Ajax.org. HiveHTML is created by John Ré Poras.</p>
+  </div>
+      
+      <!-- Social Media Icons -->
+      <ul class="social-icons">
+        <li><a href="https://www.facebook.com/IamJohnPoras.org" target="_blank"><i class="fa fa-facebook"></i></a></li>
+        <li><a href="https://github.com/JohnDev19/" target="_blank"><i class="fa fa-github"></i></a></li>
+        <li><a href="https://codepen.io/JohnDev19" target="_blank"><i class="fa fa-codepen"></i></a></li>
+	    <li><a href="https://x.com/John_dev19?t=QoSiDgpcHqExkS2nkZtY-g&s=07" target="_blank"><i class="fa fa-twitter"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Hidden contenteditable div for clipboard operations -->
+  <div id="clipboardBuffer" contenteditable="true" style="position: absolute; left: -9999px;"></div>
+  <!-- Ace Editor -->
+  <div id="editor"></div>
+  <!-- Editor Options Container -->
+  <div class="container bg-dark" style="display: flex; flex-direction: column; align-items: center;">
+    <div class="btn-group-horizontal">
+      <button class="btn btn-secondary" onclick="selectAll()"><i class="fa fa-check-square"></i></button>
+      <button class="btn btn-secondary" onclick="undo()"><i class="fa fa-undo"></i></button>
+      <button class="btn btn-secondary" onclick="redo()"><i class="fa fa-repeat"></i></button>
+      <button class="btn btn-secondary" onclick="copyText()"><i class="fa fa-clipboard"></i></button>
+      <button class="btn btn-primary" onclick="run()"><i class="fa fa-play"></i></button>
+      <button class="btn btn-danger" onclick="deleteAll()"><i class="fa fa-trash"></i></button>
+    </div>
+  </div>
+      
+
+  
+<!-- Bootstrap Modal for Output -->
+<div class="modal fade" id="outputModal" tabindex="-1" role="dialog" aria-labelledby="outputModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <i class="fa fa-times close-icon" onclick="closeOutputModal()" style="font-size: 24px;"></i>
+      </div>
+      <div class="modal-body" id="outputModalBody"></div>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="popover"]').popover();
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+/*  Disclaimer: HiveHTML uses the Ace Editor for code editing. Ace Editor is a product of Ajax.org. HiveHTML is created by JOHN RÉ PORAS.
+
+ Copyright (c) 2024 JOHN RÉ PORAS
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. */
+
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
+        
+body {
+    font-family: 'Montserrat', sans-serif !important;
+}
+    
+    
+#editor {
+    width: 100% !important;
+    min-height: 80.4vh !important;
+}
+
+#outputModal .modal-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+    background-color: #f8f9fa !important;
+}
+
+#outputModal .modal-body {
+    margin-top: 60px !important;
+}
+
+@media (max-width: 576px) {
+    #outputModal .modal-header {
+        position: static !important;
+        width: auto !important;
+    }
+
+    #outputModal .modal-body {
+        margin-top: 0;
+    }
+}
+
+.close-icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.custom-select {
+    display: inline-block;
+    padding: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #495057 !important;
+    background-color: #fff !important;
+    background-clip: padding-box;
+    border: 1px solid #ced4da !important;
+    border-radius: 4px;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.custom-select:hover {
+    border-color: #007bff !important;
+}
+
+.custom-select:focus {
+    border-color: #007bff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+.custom-select option {
+    padding: 8px;
+    background-color: #fff !important;
+    color: #495057 !important;
+}
+
+.dropdown-menu {
+    background-color: #f8f9fa !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease !important;
+}
+
+.dropdown-menu:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+    transform: translateY(-2px);
+}
+
+.dropdown-item {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333 !important;
+    transition: background-color 0.3s ease;
+    background-color: #f8f9fa !important;
+}
+
+.dropdown-item:hover {
+    background-color: #f2f2f2 !important;
+    color: #007bff !important;
+    cursor: pointer !important;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f2f2f2 !important;
+    height: 90px;
+  }
+
+.btn-group-horizontal {
+      display: flex;
+      justify-content: center;
+      background-color: none !important;
+    }
+
+    .btn-group-horizontal button {
+      margin: 0 10px;
+      background-color: #6A6A6A;
+      border-color: #6A6A6A;
+    }
+
+    .btn-group-horizontal button:hover {
+      background-color: #007bff !important;
+      color: #fff !important;
+    }
+    
+    .ace_mobile-buttons-container {
+    display: flex;
+    background-color: transparent;
+    box-shadow: none;
+  }
+  }
+
+  .ace_mobile-button {
+    margin-right: 5px;
+    padding: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .ace_mobile-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .disclaimer {
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #f5c6cb;
+      border-radius: 4px;
+    }
+  
+  .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .social-icons li {
+      margin-right: 10px;
+    }
+
+    .social-icons a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+    }
