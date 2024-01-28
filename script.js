@@ -81,6 +81,8 @@ function getModeFromFileName(fileName) {
   switch (extension) {
     case 'html':
       return 'html';
+    case 'txt':
+      return 'text';
     default:
       return 'text';
   }
