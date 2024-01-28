@@ -109,12 +109,21 @@ body {
 }
 
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2 !important;
-    height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f2f2f2 !important;
+  height: 90px;
+  padding: 0 20px;
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 100%;
+    max-width: 1200px;
+   margin: 0 auto;
   }
+}
 
 .btn-group-horizontal {
       display: flex;
@@ -151,7 +160,8 @@ body {
   .ace_mobile-button:hover {
     background-color: #f0f0f0;
   }
-  
+
+/*
   .disclaimer {
   background-color: #f8d7da;
   color: #721c24;
@@ -172,7 +182,7 @@ body {
   .disclaimer:hover p {
     display: block;
   }
-}
+} */
   
   .social-icons {
       list-style: none;
