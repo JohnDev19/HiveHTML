@@ -113,34 +113,34 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #f2f2f2 !important;
-  padding: 0 20px;
+  padding: 10px 20px;
 }
 
 @media (min-width: 992px) {
   .container {
     width: 100%;
     max-width: none;
-   margin: 0;
+    margin: 0;
   }
 }
 
 .btn-group-horizontal {
-      display: flex;
-      justify-content: center;
-      background-color: none !important;
-    }
+  display: flex;
+  align-items: center;
+}
 
-    .btn-group-horizontal button {
-      margin: 0 10px;
-      background-color: #6A6A6A;
-      border-color: #6A6A6A;
-    }
+.btn-group-horizontal button {
+  margin: 0 10px;
+  background-color: #6A6A6A;
+  border-color: #6A6A6A;
+  color: #fff;
+}
 
-    .btn-group-horizontal button:hover {
-      background-color: #007bff !important;
-      color: #fff !important;
-    }
-    
+.btn-group-horizontal button:hover {
+  background-color: #007bff !important;
+  color: #fff !important;
+}
+
     .ace_mobile-buttons-container {
     display: flex;
     background-color: transparent;
