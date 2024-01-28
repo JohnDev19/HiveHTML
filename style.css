@@ -108,25 +108,6 @@ body {
     cursor: pointer !important;
 }
 
-    
-    .ace_mobile-buttons-container {
-    display: flex;
-    background-color: transparent;
-    box-shadow: none;
-  }
-
-  .ace_mobile-button {
-    margin-right: 5px;
-    padding: 5px;
-    cursor: pointer;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-
-  .ace_mobile-button:hover {
-    background-color: #f0f0f0;
-  }
-
 /*
   .disclaimer {
       background-color: #f8d7da;
