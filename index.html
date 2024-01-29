@@ -63,9 +63,9 @@
         Upload
     </a>
     <div class="dropdown-menu" aria-labelledby="uploadDropdown">
-        <label class="dropdown-item" for="fileInput">Upload File</label>
+        <label class="dropdown-item" for="fileInput">File</label>
         <input type="file" id="fileInput" class="d-none" accept="*/*" onchange="loadFile()">
-        <label class="dropdown-item" for="wallpaperInput">Upload Wallpaper</label>
+        <label class="dropdown-item" for="wallpaperInput">Wallpaper</label>
         <input type="file" id="wallpaperInput" class="d-none" accept="image/*" onchange="setCustomWallpaper()">
         <a class="dropdown-item" href="#" onclick="clearWallpaper()">Clear Wallpaper</a>
         </div>
@@ -148,17 +148,17 @@
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/xcode')">Xcode</a>
           </div>
         </li>
-               <li class="nav-item">
+   <!--            <li class="nav-item">
     <a class="nav-link" href="#" onclick="exportCode()">Export Code</a>
-    </li>
+    </li> -->
 
        <li class="nav-item">
           <a class="nav-link" href="#" onclick="executeCode()">Execute</a>
         </li>
-        
+        <!--
         <li class="nav-item">
           <a class="nav-link" href="#" onclick="generateShareableLink()">Share</a>
-        </li>
+        </li> -->
         
       </ul>
       
@@ -195,7 +195,7 @@
     </div>
   </div>
 </div>
-
+<!--
 <div class="modal fade" id="exportPromptModal" tabindex="-1" role="dialog" aria-labelledby="exportPromptModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content export-prompt">
@@ -206,7 +206,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
   <script src="script.js"></script>
 
