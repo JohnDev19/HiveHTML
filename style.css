@@ -11,7 +11,7 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap");
         
 body {
-    font-family: 'Montserrat', sans-serif !important;
+    font-family: 'Orbitron', sans-serif !important;
 }
     
 #editor {
@@ -143,3 +143,77 @@ body {
       text-decoration: none;
       font-size: 20px;
     }
+
+#consoleOutput {
+  background-color: #282c34 !important;
+  color: #FFFFFF !important;
+  padding: 10px;
+  font-family: 'Courier New', monospace;
+  overflow-y: scroll;
+  max-height: 200px;
+}
+
+#consoleOutput pre {
+  color: #FFFFFF !important;
+}
+
+#consoleOutput p {
+  color: #FF0014 !important;
+}
+
+.timestamp {
+  color: #009C1F;
+  margin-right: 5px;
+}
+
+.center-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    margin-bottom: 10px !important;
+}
+
+.form-control {
+    width: 100% !important;
+    max-width: 150px !important;
+    margin: 0 auto !important;
+}
+
+.btn-primary {
+    width: 80% !important;
+    max-width: 150px !important;
+    margin-top: 10px !important;
+    margin-left: 10% !important;
+    margin-right: 10% !important;
+}
+
+.export-prompt {
+    background-color: #495057 !important;
+    border: 1px solid #ced4da !important;
+    padding: 15px !important;
+    border-radius: 5px !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+.export-prompt input {
+    width: 100% !important;
+    padding: 8px !important;
+    margin-top: 10px !important;
+    box-sizing: border-box !important;
+}
+
+.export-prompt button {
+    display: block !important;
+    width: 50% !important;
+    margin: 0 auto !important;
+    padding: 10px !important;
+    margin-top: 10px !important;
+    color: #fff !important;
+    background-color: #007bff !important;
+    border: 1px solid #007bff !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+}
