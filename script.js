@@ -649,27 +649,11 @@ function getContentType(fileExtension) {
 function generateShareableLink() {
     var code = editor.getValue();
     var randomCode = Math.floor(10000 + Math.random() * 90000);
-    var link = window.location.href.split('?')[0] + '/code/' + randomCode + '.txt';
-    
+    var link = window.location.href.split('?')[0] + '/code/' + randomCode;
+
     alert('Share this link: ' + link);
+
     copyToClipboard(link);
-}
-
-function copyToClipboard(text) {
-    var textarea = document.createElement('textarea');
-    textarea.value = text;
-    document.body.appendChild(textarea);
-    textarea.select();
-    document.execCommand('copy');
-    document.body.removeChild(textarea);
-}
-
-function loadCodeFromLink(shortCode) {
-    var storedCode = localStorage.getItem(shortCode);
-
-    if (storedCode) {
-        editor.setValue(storedCode);
-    }
 }
 
 //////////////BRACKETS HIGHLIGHTING///////////////
