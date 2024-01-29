@@ -21,20 +21,18 @@
     <link rel="icon" href="code.png" type="image/x-icon">
     
     <link rel="stylesheet" href="style.css">
-
-  <!-- Bootstrap CSS -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Orbitron&amp;display=swap" rel="stylesheet"/>
   
-  <!-- Ace Editor -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.js"></script>
-  <!-- Font Awesome Icons -->
   <script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
 </head>
 <body>
+    
   <!-- Navigation Menu -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a class="navbar-brand" href="#">HiveHTML</a>
@@ -43,30 +41,66 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
-          <li class="nav-item">
-          <label class="nav-link" for="fileInput">Upload</label>
-          <input type="file" id="fileInput" class="d-none" accept=".html" onchange="loadFile()">
-        </li>
-        <li class="nav-item">
-          <select id="languageSelector" class="custom-select" onchange="changeLanguage()">
-            <option value="html">HTML</option>
-            <option value="text">Plain Text</option>
-          </select>
-        </li>
-          
-         <li class="nav-item">
-          <a class="nav-link" href="#" onclick="toggleWordWrap()">Wrap</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="toggleReadOnly()">Read-Only</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#" onclick="executeCode()">Execute</a>
+          <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="searchReplaceDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Search & Replace
+    </a>
+    <div class="dropdown-menu center-form" aria-labelledby="searchReplaceDropdown">
+    <div class="form-group">
+        <label for="searchInput">Search:</label>
+        <input type="text" class="form-control" id="searchInput">
+    </div>
+    <div class="form-group">
+        <label for="replaceInput">Replace with:</label>
+        <input type="text" class="form-control" id="replaceInput">
+    </div>
+    <button type="button" class="btn btn-primary" onclick="executeSearchReplace()">Search & Replace</button>
+    </div>
+    </li>
+
+          <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="uploadDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Upload
+    </a>
+    <div class="dropdown-menu" aria-labelledby="uploadDropdown">
+        <label class="dropdown-item" for="fileInput">Upload File</label>
+        <input type="file" id="fileInput" class="d-none" accept="*/*" onchange="loadFile()">
+        <label class="dropdown-item" for="wallpaperInput">Upload Wallpaper</label>
+        <input type="file" id="wallpaperInput" class="d-none" accept="image/*" onchange="setCustomWallpaper()">
+        <a class="dropdown-item" href="#" onclick="clearWallpaper()">Clear Wallpaper</a>
+        </div>
         </li>
         
+       <li class="nav-item">
+    <select id="languageSelector" class="custom-select" onchange="changeLanguage()">
+        <option value="html">HTML</option>
+        <option value="javascript">JavaScript</option>
+        <option value="markdown">Markdown</option>
+        <option value="text">Plain Text</option>
+        <option value="python">Python</option>
+        <option value="go">Go</option>
+        <option value="cpp">C++</option>
+        <option value="css">CSS</option>
+        <option value="csharp">C#</option>
+        <option value="ruby">Ruby</option>
+    </select>
+    </li>
+    
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="featuresDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Toggle
+    </a>
+    <div class="dropdown-menu" aria-labelledby="featuresDropdown">
+        <a class="dropdown-item" href="#" onclick="toggleWordWrap()">Wrap</a>
+        <a class="dropdown-item" href="#" onclick="toggleReadOnly()">Read-Only</a>
+        <a class="dropdown-item" href="#" onclick="toggleLineNumbers()">Line Numbers</a>
+        <a class="dropdown-item" href="#" onclick="toggleSyntaxHighlighting()">Syntax Highlighting</a>
+       </div>
+       </li>
+       
         <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" id="editorOptionsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Edit
+        Editor
     </a>
     <div class="dropdown-menu" aria-labelledby="editorOptionsDropdown">
         <a class="dropdown-item" href="#" onclick="selectAllAndClose()">Select All</a>
@@ -74,13 +108,15 @@
         <a class="dropdown-item" href="#" onclick="redoAndClose()">Redo</a>
         <a class="dropdown-item" href="#" onclick="copyAndClose()">Copy</a>
         <a class="dropdown-item" href="#" onclick="deleteAllAndClose()">Delete All</a>
-    </div>
-</li>
+        <a class="dropdown-item" href="#" onclick="formatCode()">Format</a>
+        <a class="dropdown-item" href="#" onclick="increaseFontSize(event)">Increase Font Size</a>
+        <a class="dropdown-item" href="#" onclick="decreaseFontSize(event)">Decrease Font Size</a>
+         </div>
+         </li>
         
-        <!-- Theme Selector Dropdown -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="themeDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Themes
+            Theme
           </a>
           <div class="dropdown-menu" aria-labelledby="themeDropdown">
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/ambiance')">Ambiance</a>
@@ -110,16 +146,23 @@
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/twilight')">Twilight</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/vibrant_ink')">Vibrant Ink</a>
     <a class="dropdown-item" href="#" onclick="changeTheme('ace/theme/xcode')">Xcode</a>
-		  <!--
-    <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#" onclick="changeThemeRainy('ace-rainy')">Rainy Day</a>
-        <a class="dropdown-item" href="#" onclick="changeThemeBatman('ace-batman')">Batman</a>
-        <a class="dropdown-item" href="#" onclick="changeThemeAurora('ace-aurora')">Aurora</a>
-		  -->
           </div>
         </li>
+               <li class="nav-item">
+    <a class="nav-link" href="#" onclick="exportCode()">Export Code</a>
+    </li>
+
+       <li class="nav-item">
+          <a class="nav-link" href="#" onclick="executeCode()">Execute</a>
+        </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#" onclick="generateShareableLink()">Share</a>
+        </li>
+        
       </ul>
       
+
       <!--
       <div class="disclaimer">
     <p><strong>Disclaimer:</strong> HiveHTML uses the Ace Editor for code editing. Ace Editor is a product of Ajax.org. HiveHTML is created by John Ré Poras.</p>
@@ -135,10 +178,10 @@
     </div>
   </nav>
   
-  <!-- Hidden contenteditable div for clipboard operations -->
   <div id="clipboardBuffer" contenteditable="true" style="position: absolute; left: -9999px;"></div>
   <!-- Ace Editor -->
   <div id="editor"></div>
+ <div id="consoleOutput"></div>
 
   
 <!-- Bootstrap Modal for Output -->
@@ -153,7 +196,20 @@
   </div>
 </div>
 
+<div class="modal fade" id="exportPromptModal" tabindex="-1" role="dialog" aria-labelledby="exportPromptModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content export-prompt">
+            <div class="modal-body">
+                <label for="fileNameInput"></label>
+                <input type="text" class="form-control" id="fileNameInput" placeholder="e.g., example.html">
+                <button class="btn btn-primary mt-3" onclick="exportCode()">Export Code</button>
+            </div>
+        </div>
+    </div>
+</div>
+
   <script src="script.js"></script>
+
   <!-- Bootstrap JS and Popper.js -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
