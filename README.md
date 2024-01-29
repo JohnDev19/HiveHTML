@@ -1,6 +1,6 @@
 # HiveHTML - Code Editor
 
-HiveHTML is a collaborative and efficient code editor for HTML enthusiasts. Join the coding hive and experience code editing with powerful features.
+HiveHTML is a collaborative and efficient code editor designed with a primary focus on HTML, but now expanded to support various programming languages. Join the coding hive and experience versatile code editing with features.
 
 # Screenshots
 
@@ -26,7 +26,7 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-# Code Editor Features
+# Features
 
 1. **Search & Replace:**
    - Search and replace functionality.
