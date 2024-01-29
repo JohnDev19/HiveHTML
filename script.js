@@ -587,19 +587,19 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+///////////////Export Code////////////////////
+
 function exportCode() {
     $('#exportPromptModal').modal('show');
 }
 
 var code = editor.getValue();
-var language = document.getElementById('languageSelector').value;
-
 var promptContainer = document.createElement('div');
 promptContainer.classList.add('export-prompt');
 
 var fileNameInput = document.createElement('input');
 fileNameInput.type = 'text';
-fileNameInput.placeholder = 'Enter the file name with extension (e.g., filename.html)';
+fileNameInput.placeholder = 'Enter the file name without extension (e.g., filename)';
 
 var exportButton = document.createElement('button');
 exportButton.textContent = 'Export Code';
@@ -608,41 +608,24 @@ promptContainer.appendChild(fileNameInput);
 promptContainer.appendChild(exportButton);
 
 exportButton.addEventListener('click', function () {
-    var fullFileName = fileNameInput.value.trim();
-    if (!fullFileName) {
+    var fileName = fileNameInput.value.trim();
+    if (!fileName) {
         alert('Please enter a valid file name.');
         return;
     }
 
-    var fileExtension = fullFileName.split('.').pop().toLowerCase();
-    var contentType = getContentType(fileExtension);
-
-    var blob = new Blob([code], { type: contentType });
+    var fullFileName = fileName + '.txt';
+    var blob = new Blob([code], { type: 'text/plain;charset=utf-8' });
     saveAs(blob, fullFileName);
 
     $('#exportPromptModal').modal('hide');
     promptContainer.remove();
 });
 
-$('#exportPromptModal').modal('show');
-document.body.appendChild(promptContainer);
-
-function getContentType(fileExtension) {
-    const contentTypes = {
-        'html': 'text/html;charset=utf-8',
-        'js': 'application/javascript;charset=utf-8',
-        'css': 'text/css;charset=utf-8',
-        'go': 'text/plain;charset=utf-8',
-        'cs': 'text/plain;charset=utf-8',
-        'cpp': 'text/plain;charset=utf-8',
-        'py': 'text/plain;charset=utf-8',
-        'md': 'text/markdown;charset=utf-8',
-        'rb': 'text/plain;charset=utf-8',
-    };
-
-    // Default to plain text if the content type is not found
-    return contentTypes[fileExtension.toLowerCase()] || 'text/plain;charset=utf-8';
-}
+$(document).ready(function () {
+    $('#exportPromptModal').modal('show');
+    document.body.appendChild(promptContainer);
+});
 
 ///////////////SHAREABLE LINK////////////////////
 
