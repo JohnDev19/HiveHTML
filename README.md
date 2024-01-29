@@ -7,10 +7,9 @@ HiveHTML is a collaborative and efficient code editor for HTML enthusiasts. Join
 - [Live Demo](https://johndev19.github.io/HiveHTML/)
 
 ![Demo](IMG_20240128_121706.jpg)
-![Demo](IMG_20240128_121647.jpg)
 ![Demo](IMG_20240128_121537.jpg)
-![Demo](IMG_20240128_121726.jpg)
 ![Demo](IMG_20240128_121631.jpg)
+![Demo](IMG_20240128_121647.jpg)
 ![Demo](IMG_20240128_121614.jpg)
 
 ## Disclaimer
@@ -27,16 +26,74 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 ```
 
-## Navigation Menu
+# Code Editor Features
 
-The navigation menu provides essential functionalities for coding experience:
+1. **Search & Replace:**
+   - Search and replace functionality.
+   - Perform operations conveniently with a centered form.
 
-- **Upload File:** Load HTML files using the "Upload File" option.
-- **Language Selector:** Choose between plain text and HTML language.
-- **Word Wrap:** Toggle word wrap for better readability.
-- **Toggle Read-Only:** Enable or disable the read-only mode.
-- **Execute Code:** Execute the HTML code.
-- **Visual Styles:** Choose from a variety of visual styles for code highlighting.
+2. **Upload:**
+   - File and wallpaper uploads.
+   - Choose files with the file input and manage wallpaper uploads.
+
+3. **Language Selector:**
+   - Select your preferred programming language.
+   - Options include HTML, JavaScript, Markdown, Plain Text, Python, Go, C++, CSS, C#, Ruby.
+
+4. **Toggle Features:**
+   - Toggle various features for customization.
+   - Options include Word Wrap, Read-Only, Line Numbers, Syntax Highlighting.
+
+5. **Editor Options:**
+   - Various editor options.
+   - Options include Select All, Undo, Redo, Copy, Delete All, Format Code, Increase/Decrease Font Size.
+
+6. **Theme Selection:**
+   - Choose your preferred theme.
+   - Options include various themes like Ambiance, Chaos, Clouds, Cobalt, etc.
+
+7. **Execute Code:**
+   - Execute your code with a single click.
+
+8. **Autocomplete Function:**
+   - Use Ctrl-Space (Win) or Command-Space (Mac) to trigger autocompletion.
+   - Automatically completes HTML tags or adds closing braces in appropriate contexts.
+
+9. **Font Size Adjustment:**
+    - Increase or decrease the font size for better visibility.
+    - Accessible through dedicated buttons in the editor options dropdown.
+
+10. **Autosave Feature:**
+    - Enable autosave to automatically save content at specified intervals.
+    - Protect against accidental data loss with periodic autosaving.
+
+11. **Custom Wallpaper:**
+    - Set a custom wallpaper for the editor background.
+    - Enhance the visual appearance of the coding environment.
+
+12. **Toggle Line Numbers:**
+    - Show or hide line numbers in the editor.
+    - Toggle easily for code navigation.
+
+13. **Toggle Syntax Highlighting:**
+    - Enable or disable syntax highlighting for the code.
+    - Adapt the editor to different coding preferences.
+
+14. **Change Theme:**
+    - Select from a variety of themes to customize the editor's appearance.
+    - Choose a theme that suits your coding style.
+
+15. **Search & Replace Function:**
+    - Utilize a search and replace dropdown for efficient code editing.
+    - Find and replace text with ease.
+
+16. **Auto Generate HTML Comment:**
+    - Automatically generate HTML comments based on selected tags.
+    - Enhance code documentation within HTML.
+
+17. **Comment Navigation:**
+    - Navigate between comments in the code.
+    - Use keyboard shortcuts for efficient comment navigation.
 
 ## Connect with me
 
