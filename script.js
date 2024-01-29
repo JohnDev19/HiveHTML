@@ -649,12 +649,29 @@ function getContentType(fileExtension) {
 function generateShareableLink() {
     var code = editor.getValue();
     var randomCode = Math.floor(10000 + Math.random() * 90000);
-    var link = window.location.href.split('?')[0] + '/code/' + randomCode;
+    var link = window.location.href.split('?')[0] + '/shared/' + randomCode;
 
     alert('Share this link: ' + link);
 
+    localStorage.setItem('codeBackup_' + randomCode, code);
+
     copyToClipboard(link);
 }
+
+function loadCodeFromLink() {
+    var urlParts = window.location.pathname.split('/');
+    var shortCode = urlParts[urlParts.length - 1];
+
+    var storedCode = localStorage.getItem('codeBackup_' + shortCode);
+
+    if (storedCode) {
+        editor.setValue(storedCode);
+    } else {
+        alert('Invalid or expired link.');
+    }
+}
+
+document.addEventListener('DOMContentLoaded', loadCodeFromLink);
 
 //////////////BRACKETS HIGHLIGHTING///////////////
 
